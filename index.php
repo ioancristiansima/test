@@ -7,6 +7,7 @@
 <?php
 echo "Hello World!";
 ?>
+<a href="pg1.php">Visit pg1</a>
 
 </body>
 </html>
