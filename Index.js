@@ -7,8 +7,10 @@ function sendMail() {
 
   const serviceID = "service_nlq3h1n";
   const templateID = "template_1pf7or5";
-if(name !=null && name !='' && email !=null && email !='' && message !=null && message !=''){
-    emailjs.send(serviceID, templateID, params)
+if(document.getElementById("name").value&&document.getElementById("email").value&&document.getElementById("message").value){
+
+  
+  emailjs.send(serviceID, templateID, params)
     .then(res=>{
         document.getElementById("name").value = "";
         document.getElementById("email").value = "";
@@ -19,6 +21,9 @@ if(name !=null && name !='' && email !=null && email !='' && message !=null && m
     })
     .catch(err=>console.log(err));
   }else{
+    
     alert("Your message don't sent !!")
   }
 }
+
+
