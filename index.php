@@ -11,7 +11,6 @@
       crossorigin="anonymous"
     />
     <script src="index.js"></script>
-    <script src="validatename.js"></script>
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
@@ -21,8 +20,12 @@
         emailjs.init("YEG9ZSqkZ7GDnqk4J");
       })();
     </script>
-
-
+     <script src="https://www.google.com/recaptcha/api.js"></script>
+     <script>
+      function onSubmit(token) {
+        document.getElementById("#submitbtn").submit();
+      }
+    </script>
       </head>
   <body>
     <div class="container border mt-3 bg-light">
@@ -62,7 +65,7 @@
             <h5 for="message">Message</h5>
             <textarea class="form-control" id="message" minlength="3" rows="3"></textarea>
           </div>
-          <button class="btn btn-info" id="submitbtn" onclick="sendMail()">Send mail</button>
+          <button class="btn btn-info" id="submitbtn" data-sitekey="reCAPTCHA_6LeJTNciAAAAAEbVedqMXzg9i0LhqUg6HWxfMgZv" data-callback='onSubmit' data-action='submit' onclick="sendMail()">Send mail</button>
         </div>
       </div>
     </div>
