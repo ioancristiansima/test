@@ -4,10 +4,12 @@ function sendMail() {
     email: document.getElementById("email").value,
     message: document.getElementById("message").value,
   };
+  
+ var cap= document.getElementById("g-recaptcha").value;
 
   const serviceID = "service_nlq3h1n";
   const templateID = "template_1pf7or5";
-if(document.getElementById("name").value&&document.getElementById("email").value&&document.getElementById("message").value){
+if(document.getElementById("name").value&&document.getElementById("email").value&&document.getElementById("message").value&&document.getElementById("g-recaptcha").value){
 
   
   emailjs.send(serviceID, templateID, params)
