@@ -1,24 +1,44 @@
 <?php
-define('SITE_KEY', '6LeJTNciAAAAAEbVedqMXzg9i0LhqUg6HWxfMgZv');
-define('SECRET_KEY', '6LeJTNciAAAAAKe3VWOJ5eoGxSyVRMmKRLFxsnLc');
 
-if($_POST){
-    function getCaptcha($SecretKey){
-        $Response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".SECRET_KEY."&response={$SecretKey}");
-        $Return = json_decode($Response);
-        return $Return;
+if(isset($_POST['submit']))
+{
+
+function CheckCaptcha($userResponse) {
+        $fields_string = '';
+        $fields = array(
+            'secret' => 6LeJTNciAAAAAKe3VWOJ5eoGxSyVRMmKRLFxsnLc
+            'response' => $userResponse
+        );
+        foreach($fields as $key=>$value)
+        $fields_string .= $key . '=' . $value . '&';
+        $fields_string = rtrim($fields_string, '&');
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'https://www.google.com/recaptcha/api/siteverify');
+        curl_setopt($ch, CURLOPT_POST, count($fields));
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, True);
+
+        $res = curl_exec($ch);
+        curl_close($ch);
+
+        return json_decode($res, true);
     }
-    $Return = getCaptcha($_POST['g-recaptcha-response']);
-    //var_dump($Return);
-    if($Return->success == true && $Return->score > 0.5){
-        echo "Succes!";
-    }else{
-        echo "You are a Robot!!";
+
+
+    // Call the function CheckCaptcha
+    $result = CheckCaptcha($_POST['g-recaptcha-response']);
+
+    if ($result['success']) {
+        //If the user has checked the Captcha box
+        echo "Captcha verified Successfully";
+	
+    } else {
+        // If the CAPTCHA box wasn't checked
+       echo '<script>alert("Error Message");</script>';
     }
 }
-
-?>
-
+    ?>
 
 
 
@@ -89,10 +109,12 @@ if($_POST){
             <h5 for="message">Message</h5>
             <textarea class="form-control" id="message" minlength="3" rows="3"></textarea>
           </div>
-          <button class="btn btn-info" id="submitbtn" data-sitekey="reCAPTCHA_6LeJTNciAAAAAEbVedqMXzg9i0LhqUg6HWxfMgZv" data-callback='onSubmit' data-action='submit' onclick="sendMail()">Send mail</button>
+          <button class="btn btn-info" id="submitbtn" onclick="sendMail()">Send mail</button>
         </div>
       </div>
     </div>
+        <div class="g-recaptcha" data-sitekey="6LeJTNciAAAAAEbVedqMXzg9i0LhqUg6HWxfMgZv"></div>
+<input type="submit" name="submit" value="submit">
   </form>
 
   <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -113,24 +135,7 @@ $( "#myform" ).validate({
   }
 });
 </script>
-    
-    
-    
-    
-        <form action="/" method="POST">
-        <input type="text" name="name" /><br />
-        <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" /><br >
-        <input type="submit" value="Submit" />
-    </form>
-    <script>
-    grecaptcha.ready(function() {
-    grecaptcha.execute('<?php echo SITE_KEY; ?>', {action: 'homepage'})
-    .then(function(token) {
-        //console.log(token);
-        document.getElementById('g-recaptcha-response').value=token;
-    });
-    });
-    </script>
+  
   
 
   </body>
