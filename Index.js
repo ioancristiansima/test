@@ -5,43 +5,40 @@ function sendMail() {
     message: document.getElementById("message").value,
   };
 
-  var checkCaptch = false;
-     var verifyCallback = function(response) {
-        if (response == "") {
-             checkCaptch = false;
-         }
-         else {
-             checkCaptch = true;
-         }
-     };
-
   const serviceID = "service_nlq3h1n";
   const templateID = "template_1pf7or5";
 
-  $(document).ready(function() {
-    $("#submitbtn").click(function() {
-        if (checkCaptch && grecaptcha.getResponse()!="") {
-          if(document.getElementById("name").value&&document.getElementById("email").value&&document.getElementById("message").value){
+
 
   
-            emailjs.send(serviceID, templateID, params)
-              .then(res=>{
-                  document.getElementById("name").value = "";
-                  document.getElementById("email").value = "";
-                  document.getElementById("message").value = "";
-                  console.log(res);
-                  alert("Your message sent successfully!!")
-          
-              })
-              .catch(err=>console.log(err));
-            }else{
-              
-              alert("Your message don't sent !!")
-            }
-        }
-    });
-})
+if(grecaptcha && grecaptcha.getResponse().length > 0)
+{
+  if(document.getElementById("name").value&&document.getElementById("email").value&&document.getElementById("message").value){
 
+  
+    emailjs.send(serviceID, templateID, params)
+      .then(res=>{
+          document.getElementById("name").value = "";
+          document.getElementById("email").value = "";
+          document.getElementById("message").value = "";
+          console.log(res);
+          alert("Your message sent successfully!!")
+  
+      })
+      .catch(err=>console.log(err));
+    }else{
+      
+      alert("Your message don't sent !!")
+    }
+     
+     
+}
+else
+{
+    //The recaptcha is not cheched
+    //You can display an error message here
+    alert('Oops, you have to check the recaptcha !');
+}
 
 }
 
