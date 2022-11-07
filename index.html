@@ -67,7 +67,7 @@
             <h5 for="message">Message</h5>
             <textarea class="form-control" id="message" minlength="3" rows="3"></textarea>
           </div>
-          <button class="btn btn-info" id="submitbtn" type="submit" onclick="sendMail()">Send mail</button>
+          <button class="btn btn-info" id="submitbtn" type="submit" onclick="sendMail()" disabled>Send mail</button>
             <div class="g-recaptcha" data-callback="recaptchaCallback" data-sitekey="6LeAEtgiAAAAAIblF5YJ1BpolsVB3k0bkqrTwPBp"></div>
         </div>
       </div>
@@ -99,4 +99,3 @@ $( "#myform" ).validate({
 
   </body>
 </html>
-
