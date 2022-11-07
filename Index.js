@@ -28,11 +28,6 @@ function sendMail() {
     }
 }
 
-function  recaptcha_callback(){
-
-  var subBtn=document.querySelector('#submitbtn')
-  subBtn.removeAttribute('disabled')
-}
 
 
 
