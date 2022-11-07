@@ -11,21 +11,13 @@ function sendMail() {
 
 
   
-if(grecaptcha && grecaptcha.getResponse().length > 0)
+if(grecaptcha.getResponse().length ==0)
 {
-  if(document.getElementById("name").value&&document.getElementById("email").value&&document.getElementById("message").value){
+ 
+          alert("nu e selectat")
+  
+      }
 
-  
-    emailjs.send(serviceID, templateID, params)
-      .then(res=>{
-          document.getElementById("name").value = "";
-          document.getElementById("email").value = "";
-          document.getElementById("message").value = "";
-          console.log(res);
-          alert("Your message sent successfully!!")
-  
-      })
-      .catch(err=>console.log(err));
     }else{
       
       alert("Your message don't sent !!")
