@@ -8,12 +8,20 @@ function sendMail() {
   const serviceID = "service_nlq3h1n";
   const templateID = "template_1pf7or5";
 
-
-
   
-if(grecaptcha && grecaptcha.getResponse().length > 0)
-{
-  if(document.getElementById("name").value&&document.getElementById("email").value&&document.getElementById("message").value){
+
+  document.getElementById("myform").addEventListener("submit",function(evt)
+  {
+  
+  var response = grecaptcha.getResponse();
+  if(response.length == 0) 
+  { 
+    //reCaptcha not verified
+    alert("please verify you are humann!"); 
+    evt.preventDefault();
+    return false;
+  }
+    if(document.getElementById("name").value&&document.getElementById("email").value&&document.getElementById("message").value){
 
   
     emailjs.send(serviceID, templateID, params)
@@ -30,14 +38,5 @@ if(grecaptcha && grecaptcha.getResponse().length > 0)
       
       alert("Your message don't sent !!")
     }
-     
-     
-}
-else
-{
-    //The recaptcha is not cheched
-    //You can display an error message here
-    alert('Oops, you have to check the recaptcha !');
-}
-
-}
+  
+});
