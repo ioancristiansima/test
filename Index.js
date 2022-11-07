@@ -20,7 +20,7 @@ if(grecaptcha.getResponse().length ==0)
 
     }else{
       
-      alert("Your message don't sent !!")
+      alert("se trimite")
     }
      
      
