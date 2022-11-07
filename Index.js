@@ -4,27 +4,45 @@ function sendMail() {
     email: document.getElementById("email").value,
     message: document.getElementById("message").value,
   };
-  
+
+  var checkCaptch = false;
+     var verifyCallback = function(response) {
+        if (response == "") {
+             checkCaptch = false;
+         }
+         else {
+             checkCaptch = true;
+         }
+     };
 
   const serviceID = "service_nlq3h1n";
   const templateID = "template_1pf7or5";
-if(document.getElementById("name").value&&document.getElementById("email").value&&document.getElementById("message").value){
+
+  $(document).ready(function() {
+    $("#submitbtn").click(function() {
+        if (checkCaptch && grecaptcha.getResponse()!="") {
+          if(document.getElementById("name").value&&document.getElementById("email").value&&document.getElementById("message").value){
 
   
-  emailjs.send(serviceID, templateID, params)
-    .then(res=>{
-        document.getElementById("name").value = "";
-        document.getElementById("email").value = "";
-        document.getElementById("message").value = "";
-        console.log(res);
-        alert("Your message sent successfully!!")
+            emailjs.send(serviceID, templateID, params)
+              .then(res=>{
+                  document.getElementById("name").value = "";
+                  document.getElementById("email").value = "";
+                  document.getElementById("message").value = "";
+                  console.log(res);
+                  alert("Your message sent successfully!!")
+          
+              })
+              .catch(err=>console.log(err));
+            }else{
+              
+              alert("Your message don't sent !!")
+            }
+        }
+    });
+})
 
-    })
-    .catch(err=>console.log(err));
-  }else{
-    
-    alert("Your message don't sent !!")
-  }
+
 }
 
 
