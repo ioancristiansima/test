@@ -20,7 +20,7 @@ function sendMail() {
     alert("please verify you are humann!"); 
     evt.preventDefault();
     return false;
-  }
+  }else{
     if(document.getElementById("name").value&&document.getElementById("email").value&&document.getElementById("message").value){
 
   
@@ -38,5 +38,7 @@ function sendMail() {
       
       alert("Your message don't sent !!")
     }
-  
+  }
 });
+
+}
