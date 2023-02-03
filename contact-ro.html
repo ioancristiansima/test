@@ -1,0 +1,284 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<link rel="icon" width="50%" href="/images/logo-tab.png">
+		<title>Contact - New Business Dimensions</title>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+		<link rel="stylesheet" href="assets/css/main.css"/>
+
+		<script src="index.js"></script><!--Mail code-->
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+		<script type="text/javascript">
+		  (function () {emailjs.init("YEG9ZSqkZ7GDnqk4J");})
+		  ();
+		</script>
+		<script src="https://www.google.com/recaptcha/api.js"></script>
+		<script>
+		  function onSubmit(token) {
+			document.getElementById("#submitbtn").submit();
+		  }
+		</script>
+	</head>
+
+	<body class="homepage is-preload">
+		<div id="page-wrapper">
+			<section id="header" class="wrapper cover-contact"> <!--HEADER zone (navigation, cover)-->
+
+				<nav id="nav"> <!--NAVIGATION meniu -->
+					<div class="logo-main-cont">
+						<a href="index.html">
+							<img src="images/logonbd.png" />
+						</a>
+					</div>
+					<ul>
+						<li class="current"><a href="about-us-ro.html">Despre noi</a></li>
+						<li><a href="it-c-ro.html">Servicii IT & C</a></li>
+						<li>
+							<a href="#">Soluții ⮟</a>
+							<ul>
+								<li><a href="bind-ro.html">Platforma BIND</a></li>
+								<li><a href="data-ai-ro.html">Soluții de Data&AI</a></li>
+								<li><a href="auto-ro.html">Automatizări și IoT</a></li>
+								<li><a href="grafs-ro.html">GRAFS Collection</a></li>
+								<li><a href="bi-ro.html">Business Intelligence</a></li>
+							</ul>
+						</li>
+						<li><a href="career-ro.html">Carieră</a></li>
+						<li><a href="references-ro.html">Referințe</a></li>
+						<li><a href="news-ro.html">Știri</a></li>
+						<li><a href="contact-ro.html" style="color:rgba(1, 133, 207, 1);">Contact</a></li>
+						<li><a href="contact-en.html"><img id="nav-header-language-cont" width="20px" height="20px" style="align-self: center!Important;" src="/images/en.png" /><span>EN</span></a></li> <!--EN FLAG-->
+					</ul>
+				</nav>
+
+				<div id="logo"><!--Cover content: title/subtitle-->
+					<h1>Contact</h1>
+				</div>
+			</section>
+
+			<div class="header-waves"> <!--Header Waves zone-->
+				<svg class="waves waves-margin" xmlns="http://www.w3.org/2000/svg"
+					 xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none"
+					 shape-rendering="auto">
+					<defs>
+						<path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+					</defs>
+					<g class="parallax">
+						<use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(1,133,207,0.4)" />
+						<use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.4)" />
+						<use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.2)" />
+						<use xlink:href="#gentle-wave" x="48" y="7" fill="#fff"/>
+					</g>
+				</svg>
+			</div>
+			
+			<section id="intro" class="wrapper style1"  style="padding-bottom: 0px;"> <!--1 INTRO-blue content zone-->
+				<div class="container">
+					<section id="features"> <!--Features -->
+
+						<header class="style1"> <!--Features header box-->
+							<p class="style2 card-white">Contactați-ne cu încredere!</p>
+							<p>Vom fi bucuroși să gasim împreună soluții pentru a contribui la succesul dumneavoastră!
+							</p>
+						</header>
+										
+						<div class="col-mg-auto form-center">
+							<form id="nbdform" method="post" action="" class="card-shadow card-white" style="text-align: left;">
+								<br>
+								<div class="form-group">
+									<h5 for="name">Nume</h5>
+									<input
+									type="text"
+									class="form-control"
+									id="name"
+									minlength="3"
+									placeholder="Introdu numele aici"
+									/>
+								</div>
+				
+								<br>
+								<div class="form-group">
+									<h5 for="email">Email</h5>
+									<input
+									type="email"
+									class="form-control"
+									id="email"
+									placeholder="Introdu adresa de email"
+									/>
+								</div>
+				
+								<br>
+								<div class="form-group">
+									<h5 for="message">Mesaje</h5>
+									<textarea class="form-control" id="message" minlength="3" rows="3"  placeholder="Introdu mesajul tău aici"></textarea>
+								</div>
+								<br><br>
+								<div class="g-recaptcha" data-callback="recaptcha_callback" data-sitekey="6LeAEtgiAAAAAIblF5YJ1BpolsVB3k0bkqrTwPBp"></div>
+								<br><br>
+								<button class="btn btn-info" id="submitbtn" type="submit" onclick="sendMail()" disabled>Trimite mesaj</button>
+							  </form>
+						</div>
+						
+					</section>
+				</div><br>
+			</section>
+
+			<section id="main" class="wrapper style3" style="margin: 0;"> <!--2 MAIN-white content zone -->
+				<div class="container">
+					<section id="features"> <!--Features -->
+
+						<header class="style1"> <!--Features header box-->
+							<h2 class="card-gray">Adresa noastră</h2>
+						</header>
+						
+						<section id="intro" class="wrapper style3" style="padding-bottom: 0px; background: url(images/overlay.png); ">
+							<div class="mapouter">
+
+								<div class="gmap_canvas" style="border-radius: 0.5em;">
+									<iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" 
+									marginheight="0" marginwidth="0" 
+									src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=new business dimensions&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+									</iframe>
+									<a href="https://www.fridaynightfunkin.net/friday-night-funkin-mods-fnf-play-online/">FNF Mods</a>
+								</div>
+
+								<style>
+								.mapouter{position:relative;text-align:right;width:100%;height:400px;}
+								.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:400px;}
+								.gmap_iframe {height:400px!important;}
+								</style>
+
+							</div><br><br>
+						</section>
+						
+					</section>
+				</div>
+			</section>
+
+			<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+			<script>// captcha
+				jQuery.validator.setDefaults({
+				debug: true,
+				success: "valid"
+				});
+				$( "#nbdform" ).validate({
+				rules: {
+					field: {
+					required: true,
+					email: true
+					}
+				}
+				});
+			</script>
+			<script>
+				function  recaptcha_callback(){
+
+				var subBtn=document.querySelector("#submitbtn")
+				subBtn.removeAttribute("disabled")
+				}
+			</script> 
+
+			<div id="btn-back-to-top"> <!--button up-->
+				<i class="fa-solid fa-chevron-up up-btn-logo"></i>
+			</div>
+
+			<section id="footer" class="wrapper footer-cont"> <!--FOOTER (1,2)-->
+				<div class="container">
+					<div class="row">
+
+						<div class="footer-h col-6 col-12-medium"> <!--LEFT FOOTER: title + logo-->
+							<div class="footer-left-cont">
+								<span>Creștem dimensiunile businessului dumneavoastră!</span>
+								<img src="images/logo-nbd-footer.png" />
+							</div>
+						</div>
+
+						<div class="footer-h col-6 col-12-medium"> <!-- RIGHT FOOTER: (2,2) contact elements -->
+							<section class="feature-list small"><br><br>
+									<section>
+											<div class="row">
+
+									<div class="col-6 col-12-small"> <!--ADRESA-->
+										<section>
+											<h3 class="icon solid fa-home">Adresa</h3>
+											<p>
+												România, București<br/>
+												Sector 1<br/>
+												Strada Scărlătescu<br/> 
+												nr. 17-19, etajul II<br/>
+												Cod Poștal: 011158<br/>
+												CIF: RO27202001<br/>
+												J40/7003/2010
+											</p>
+										</section>
+									</div>
+
+									<div class="col-6 col-12-small"> <!--SOCIAL MEDIA-->
+										<section>
+											<h3 class="icon solid fa-comment">Social media</h3>
+											<div class="social-media-icon-cont">
+												<a href="https://www.facebook.com/newbusinessdimensions/" target="_blank">
+													<img src="/images/facebook.png" class="img-footer-logo"/>
+													<span>Facebook</span>
+												</a>
+												<a href="https://www.linkedin.com/company/new-business-dimensions" target="_blank">														
+													<img src="/images/linkedin.png" class="img-footer-logo"/>
+													<span>LinkedIn</span>
+												</a>
+												<a href="https://www.youtube.com/channel/UCKqiK43dVBTcxwaaOhQ_0yQ" target="_blank">
+													<img src="/images/youtube.png" class="img-footer-logo"/>
+													<span>YouTube</span>
+												</a>
+											</div>
+										</section>
+									</div>
+
+									<div class="col-6 col-12-small"> <!--MAIL-->
+										<section>
+											<h3 class="icon solid fa-envelope">Email</h3>
+											<div class="social-media-icon-cont">
+												<a href="mailto:office@nbd.ro"><span>office@nbd.ro</span></a>
+											</div>
+										</section>
+									</div>
+
+									<div class="col-6 col-12-small"> <!--PHONE-->
+										<section>
+											<h3 class="icon solid fa-phone">Telefon</h3>
+											<div class="social-media-icon-cont">
+												<a href="tel:+40314260259"><span>+4 031 426 0259</span></a>
+											</div>
+										</section>
+									</div>
+
+								</div>
+							</section>
+						</div>
+					</div>
+
+					<div id="copyright"> <!--Copyright Footer zone-->
+						<ul>
+							<li>Copyright - 2023 &copy; <b>New Business Dimensions</b> - Toate drepturile rezervate - </li>
+							<li><a href="privacy-policy-ro.html">Politica de confidențialitate</a></li>
+						</ul>
+					</div>
+
+				</div>
+			</section>
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>
