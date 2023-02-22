@@ -1,0 +1,578 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<link rel="icon" width="50%" href="/images/logo-tab.png">
+		<title>Career - New Business Dimensions</title>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+		<link rel="stylesheet" href="assets/css/main.css"/>
+
+		<script src="index.js"></script><!--Mail code-->
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+		<script type="text/javascript">
+		  (function () {emailjs.init("YEG9ZSqkZ7GDnqk4J");})
+		  ();
+		</script>
+		<script src="https://www.google.com/recaptcha/api.js"></script>
+		<script>
+		  function onSubmit(token) {
+			document.getElementById("#submitbtn").submit();
+		  }
+		</script>
+	</head>
+
+	<body class="homepage is-preload">
+		<div id="page-wrapper">
+			<section id="header" class="wrapper cover-career"> <!--HEADER zone (navigation, cover)-->
+
+				<nav id="nav"> <!--NAVIGATION meniu -->
+					<div class="logo-main-cont">
+						<a href="index-en.html">
+							<img src="images/logonbd.svg"/>
+						</a>
+					</div>
+					<ul>
+						<li class="current"><a href="about-us-en.html">About us</a></li>
+						<li><a href="it-c-en.html">IT & C Services</a></li>
+						<li>
+							<a href="#">Solutions <i class="fa-solid fa-caret-down"></i></a>
+							<ul>
+								<li><a href="bind-en.html">BIND Platform</a></li>
+								<li><a href="data-ai-en.html">Data & AI Solutions</a></li>
+								<li><a href="auto-en.html">Automations & IoT</a></li>
+								<li><a href="grafs-en.html">GRAFS Collection</a></li>
+								<li><a href="bi-en.html">Business Intelligence</a></li>
+							</ul>
+						</li>
+						<li><a href="career-en.html" style="color:rgba(1, 133, 207);">Career</a></li>
+						<li><a href="references-en.html">References</a></li>
+						<li><a href="news-ro.html">News</a></li>
+						<li><a href="contact-en.html">Contact</a></li>
+						<li><a href="career-ro.html"><img id="nav-header-language-cont" width="20px" height="20px" style="align-self: center!Important;" src="/images/ro.png" /><span>RO</span></a></li> <!--RO FLAG-->
+					</ul>
+				</nav>
+				<div id="logo"><!--Cover content: title/subtitle-->
+					<h1>Career</h1>
+				</div>
+
+			</section>
+
+			<div class="header-waves"> <!--Header Waves zone-->
+				<svg class="waves waves-margin" xmlns="http://www.w3.org/2000/svg"
+					 xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none"
+					 shape-rendering="auto">
+					<defs>
+						<path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+					</defs>
+					<g class="parallax">
+						<use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.3)" />
+						<use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(1,133,207,0.4)" />
+						<use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+						<use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(1,133,207,0.1)"/>
+						<use xlink:href="#gentle-wave" x="48" y="9" fill="rgba(255,255,255,0.6)" />
+					</g>
+				</svg>
+			</div>
+			
+			<section id="intro" class="wrapper style1"  style="padding-bottom: 0px;"> <!--1 INTRO-blue content zone-->
+				<div class="container">
+					<section id="features"> <!--Features -->
+	
+						<header class="style1"> <!--Features header box-->
+							<h2 class="card-white">Join our team!</h2>
+							<p>We are looking for people who bring energy and passion in what they do!</p>
+							<p>Each member of the team is important and we support him to develop and achieve his professional goals.</p>
+							<p>
+								Where is our value? Easy to answer: in people. We are eager to know, creative, flexible – 
+								we want to find a purpose in our work and we are stimulated by the joy we receive with each success of our clients. 
+								We build great things together that help people and companies, and that's what we love most!
+							</p>
+							<br>
+							<img class="border-zoom h-top img-shadow" src="/images/career-photo.jpg" style="width: 62%;"/><br><br>
+							<h2 class="card-white h-top" >What's your next destination? Explore open positions and join our team!</h2>
+						</header>
+						
+						<section id="intro" class="wrapper style3" style="padding-bottom: 0px; background: url(images/overlay.png); ">
+						
+							<button type="button" id="bi-dwh" onclick="BiDwh()">BI & DWH Architect</button> 
+							<button type="button" id="sql-bi" onclick="SqlBi()">SQL & BI Developer</button> 
+							<button type="button" id="bi-ta" onclick="BiTa()">BI Technical Analyst</button>
+							<p class="style3 job-title-header" id="jobp"></p><!--titlu--> 
+							<br>
+							<br>			
+							<p id="jobd" style="color: rgb(1, 133, 207); text-align: justify; font-weight: bold;"></p> <!--rol-->
+							<p id="jobdd" style="text-align: justify;"></p>  <!--descriere--> 
+							<p id="jobc"style="color: rgb(1, 133, 207); text-align: justify; font-weight: bold;"></p>
+							<p id="jobcc" style="text-align: justify;"></p>  <!--descriere cerinte studii--> 
+							<p id="jobr" style="color: rgb(1, 133, 207); text-align: justify; font-weight: bold;"></p>
+							<p id="jobrr" style="text-align: justify;"></p> <!--descriere responsabilitati-->
+							<p id="jobm" style="text-align: justify;"></p>
+							<p id="joba" style="color: rgb(1, 133, 207); text-align: justify; font-weight: bold;"></p>
+							<p id="jobaa" style="text-align: justify;"></p> <!--descriere responsabilitati-->
+							<p id="jobt" style="color: rgb(1, 133, 207); text-align: justify; font-weight: bold;"></p>
+							<p id="jobtt" style="text-align: justify;"></p> <!--descriere tehnologii-->
+							<p id="jobl" style="color: rgb(1, 133, 207); text-align: justify; font-weight: bold;"></p>
+							<p id="jobll" style="text-align: justify;"></p> <!--descriere limbi straine-->
+							<p id="jobb"style="color: rgb(1, 133, 207); text-align: justify; font-weight: bold;"></p>
+							<p id="jobbb" style="text-align: justify;"></p> <!--descriere beneficii-->									
+							</div>
+
+							<script>
+								function BiDwh() {
+								document.getElementById("jobp").innerHTML ="BI & DWH Architect <div>";
+								document.getElementById("jobd").innerHTML ="Job description:"
+								document.getElementById("jobdd").innerHTML ="Do you like problem solving? Would you like to do this for large enterprise customers? Do you have consultative and leadership skills to develop business intelligence solutions to business problems and guide projects to success with high quality? Do you want to be part of the business development team helping organizations improve their activities through innovative business intelligence solutions?"
+								+"<br />"+
+								"Come join the NBD team as a Data Warehouse & BI Architect. In this role, you will have the opportunity to lead enterprise business intelligence projects from inception through design & delivery to successful implementation. Your broad responsibilities include, working with diverse customer groups transforming the requirements into architecture and design documents, developing project timelines & estimates, providing development best practices guidance, programming core functionality, and managing customer expectations by balancing resources, scope, and timelines without affecting quality. The ideal candidate will possess customer facing skills that will allow them to represent NBD within the customer's environment and drive discussions with senior personnel.";
+								+"<br />"
+								document.getElementById("jobc").innerHTML ="<br>Minimum Education and Experience Requirements:";
+								document.getElementById("jobcc").innerHTML =
+								"&#10003 Bachelor's degree in Computer Science, Computer Information Systems, Computer Engineering, Math, Engineering or related technical degree from an appropriately accredited institution"
+								+"<br />"+
+								"&#10003 Five years of experience in consulting or business application development, banking services;"
+								+"<br />"+
+								"&#10003 Strong Microsoft SQL and/or Oracle SQL programming skills"
+								+"<br />"+
+								"&#10003 Working with a data warehouse/data marts environment.";
+								document.getElementById("jobr").innerHTML ="<br>Position Responsibilities:";
+								document.getElementById("jobrr").innerHTML =
+								"&#10003 Collection and assessment of functional and technical requirements"
+								+"<br />"+
+								"&#10003 Assessment of current reporting environments to meet functional requirements"
+								+"<br />"+
+								"&#10003 Develop conceptual and logical data models"
+								+"<br />"+
+								"&#10003 Develop mapping of data sources"
+								+"<br />"+
+								"&#10003 Own engagement, ensure customer satisfaction, timely delivery, ensure quality"
+								+"<br />"+
+								"&#10003 Setting standards and best practices for dashboards and related technologies"
+								;
+								document.getElementById("jobm").innerHTML="Job is responsible for making decisions and recommendations for a large complex environment." +"<br/>";
+								document.getElementById("joba").innerHTML="<br>Knowledge and skills required:";
+								document.getElementById("jobaa").innerHTML =
+								"&#10003 5+ years architecting solutions for companies that use large volumes of data"
+								+"<br />"+
+								"&#10003 Strong skills and experience on data management solutions"
+								+"<br />"+
+								"&#10003 Proven experience in implementing enterprise-wide data management processes and tools for decision support"
+								+"<br />"+
+								"&#10003 Knowledge of data management tools, including data storage, data migration, and information delivery, data modelling tools, data integration tools from Oracle and/or Microsoft"
+								+"<br />"+
+								"&#10003 Experience with the complete information system life cycle"
+								+"<br />"+
+								"&#10003 Familiarity with physical and logical data modeling techniques and responsible for development of a data strategy and associated polices"
+								+"<br />"+
+								"&#10003 Solid knowledge of practices, methodologies and tools to source, transform, load, and manage data"
+								+"<br />"+
+								"&#10003 Conducting quality assurance through the information development life cycle"
+								+"<br />"+
+								"&#10003 Data management know-how"
+								+"<br />"+
+								"&#10003 Results orientation and ability to think independently and solve problems"
+								+"<br />"+
+								"&#10003 Ability to work independently and/or with teams to consistently develop and sustain high quality solutions"
+								+"<br />"+
+								"&#10003 Experience in banking industry it's a plus";
+								+"<br />"
+								document.getElementById("jobt").innerHTML="<br>Technology exposure:";
+								document.getElementById("jobtt").innerHTML =
+								"&#10003 Detailed knowledge and experience in one or more database technologies"
+								+"<br />"+
+								"&#10003 Detailed knowledge and experience in data integration or similar technologies"
+								+"<br />"+
+								"&#10003 General knowledge of and experience in one or more data integration, reporting, and data warehouse technologies from a project management, design, and development standpoint"
+								+"<br />"+
+								
+								"&#10003 Knowledge of and experience in data integration technologies (e.g., Microsoft, Oracle)"
+								+"<br />"+
+								"&#10003 Knowledge of and experience in database and data warehouse technologies (e.g., Microsoft, Oracle and secondary Teradata, IBM)"
+								;
+								document.getElementById("jobl").innerHTML="<br>Foreign languages:";
+								document.getElementById("jobll").innerHTML="&#10003 English language skills at intermediate-advanced level";
+								document.getElementById("jobb").innerHTML="<br>Benefits:";
+								document.getElementById("jobbb").innerHTML=
+								"&#10003 Properly salary conditions"
+								+"<br />"+
+								"&#10003 Indefinite period of employment contract"
+								+"<br />"+
+								"&#10003 Career plan"
+								+"<br />"+
+								"&#10003 Private medical insurance"
+								+"<br />"+
+								"&#10003 Official trainings and certifications"
+								+"<br />"+
+								"&#10003 Recognition of performance with a real opportunity for career growth"
+								+"<br />"+
+								"&#10003 Meal tickets"
+								+"<br />"+
+								"&#10003 Performance bonuses (based on company results)"
+								+"<br />"+
+								"&#10003 Professional and friendly working environment"+"<br /><br/>"
+								;
+
+								}
+								function SqlBi() {
+								document.getElementById("jobp").innerHTML ="SQL & BI Developer";
+								document.getElementById("jobd").innerHTML ="Job description:"
+								document.getElementById("jobdd").innerHTML ="This position is part of the Data Platform Team which supports development of enterprise business intelligence applications/projects. The Business Intelligence Developer is responsible for development and code specifications, data/process analysis, data validation, quality assurance/testing and application/reports development and support. This position requires collaboration and team work in the Data Platform Team, in order to support the projects’ objective."
+								document.getElementById("jobc").innerHTML ="<br>Minimum Education and Experience Requirements:";
+								document.getElementById("jobcc").innerHTML =
+								"&#10003 Bachelor's degree in Computer Science, Computer Information Systems, Computer Engineering, Math, Engineering or related technical degree from an appropriately accredited institution"
+								+"<br />"+
+								"&#10003 Two years of experience in consulting or business application development, banking services;"
+								+"<br />"+
+								"&#10003 Strong Microsoft SQL and/or Oracle SQL programming skills"
+								+"<br />"+
+								"&#10003 Working with a data warehouse/data marts environment.";
+								document.getElementById("jobr").innerHTML ="<br>Position Responsibilities:";
+								document.getElementById("jobrr").innerHTML =
+								"&#10003 Work with software tools to develop and maintain enterprise solutions using Microsoft tools (Microsoft Analysis Services (SSAS), Power BI, Reporting Services (SSRS) and Integration Services (SSIS)) and Oracle tools (Oracle DB, ODI, OBIEE, OAS) as well."
+								+"<br />"+
+								"&#10003 Work with analysts and developers in mixed teams"
+								+"<br />"+
+								"&#10003 Develop and monitor 'on-demand' or 'ad-hoc' reports and dashboards using the above technologies"
+								+"<br />"+
+								"&#10003 Interact with client resources and other associates to understand business requirements and needs"
+								+"<br />"+
+								"&#10003 Interpret system documentation and technical specifications"
+								;
+								document.getElementById("joba").innerHTML="<br>Knowledge and skills required:";
+								document.getElementById("jobaa").innerHTML =
+								"&#10003 Strong understanding of Databases and Business Intelligence concepts and their processes"
+								+"<br />"+
+								"&#10003 Ability to work with ETL jobs on Oracle or Microsoft"
+								+"<br />"+
+								"&#10003 Strong ability to write SQL coding to help analyze data"
+								+"<br />"+
+								"&#10003 Highly experienced in SQL and relational/dimensional databases (4+ years)"
+								+"<br />"+
+								"&#10003 Design, develop, test, debug, implement and maintain ETL workflows, mappings, scripts, stored procedures and applications to support the data warehouse and reporting requirements"
+								+"<br />"+
+								"&#10003 Designs and develops data transfers from source systems (on-prem, cloud, etc.) to the ETL jobs into the DW"
+								+"<br />"+
+								"&#10003 Experience in business and technical requirements gathering process"
+								+"<br />"+
+								"&#10003 Experience in data profiling and analysis and design"
+								+"<br />"+
+								"&#10003 Ability to document, define interface specifications and reports specifications based on requirements;"
+								+"<br />"+
+								"&#10003 Analytical skills"
+								+"<br />"+
+								"&#10003 Knowledge of BI tools (Power BI/SSRS, Oracle BI, OAS)"
+								+"<br />"+
+								"&#10003 ETL software – Microsoft and/or Oracle technologies"
+								+"<br />"+
+								"&#10003 Experience with logical design would be an advantage"
+								+"<br />"+
+								"&#10003 Experience with Java or C# programing would be an advantage"
+								+"<br />"+
+								"&#10003 Entry / Middle knowledge of reporting in banking would be an advantage"
+								+"<br />"+
+								"&#10003 Experience with cloud environments and tools (Oracle, Microsoft) would be an advantage"
+								+"<br />"+
+								"&#10003 Banking Experience with reporting tools (PowerBI, Oracle BI etc.) would be an advantage"
+								;
+
+								document.getElementById("jobt").innerHTML="<br>Personal skills:";
+								document.getElementById("jobtt").innerHTML =
+								"&#10003 Result oriented"
+								+"<br />"+
+								"&#10003 Proven history of successful problem solving with strong sense of ownership and urgency"
+								+"<br />"+
+								"&#10003 Ability to offer more alternatives for solving problems"
+								+"<br />"+
+								"&#10003 Capacity to quickly assimilate new knowledge"
+								+"<br />"+
+								"&#10003 Concern for accuracy and quality"
+								+"<br />"+
+								"&#10003 Team work player"
+								;
+								document.getElementById("jobl").innerHTML="<br>Foreign languages:";
+								document.getElementById("jobll").innerHTML="&#10003 English language skills at intermediate-advanced level";
+								document.getElementById("jobb").innerHTML="<br>Benefits:";
+								document.getElementById("jobbb").innerHTML=
+								"&#10003 Properly salary conditions"
+								+"<br />"+
+								"&#10003 Indefinite period of employment contract"
+								+"<br />"+
+								"&#10003 Career plan"
+								+"<br />"+
+								"&#10003 Private medical insurance"
+								+"<br />"+
+								"&#10003 Official trainings and certifications"
+								+"<br />"+
+								"&#10003 Recognition of performance with a real opportunity for career growth"
+								+"<br />"+
+								"&#10003 Meal tickets"
+								+"<br />"+
+								"&#10003 Performance bonuses (based on company results)"
+								+"<br />"+
+								"&#10003 Professional and friendly working environment"+"<br /><br/>"
+								;
+
+								}
+								function BiTa() {
+								document.getElementById("jobp").innerHTML ="BI Technical Analyst";
+								document.getElementById("jobd").innerHTML ="Job description:"
+								document.getElementById("jobdd").innerHTML ="This position is part of the Consultancy Team which supports development of enterprise business intelligence applications. The Business Intelligence Analyst is responsible for developing technical requirements, business requirements, system design and code specifications, data/process analysis, data validation, quality assurance/testing, and application development and support. This position fosters collaboration and team work in the development of analytics to support the project objective."
+								document.getElementById("jobc").innerHTML ="<br>Minimum Education and Experience Requirements:";
+								document.getElementById("jobcc").innerHTML =
+								"&#10003 Bachelor's degree in Computer Science, Computer Information Systems, Computer Engineering, Math, Engineering or related technical degree from an appropriately accredited institution"
+								+"<br />"+
+								"&#10003 Two years of experience in business application consulting or development";
+								document.getElementById("jobr").innerHTML ="<br>Position Responsibilities:";
+								document.getElementById("jobrr").innerHTML =
+								"&#10003 Strong understanding of Databases and Business Intelligence concepts and their processes"
+								+"<br />"+
+								"&#10003 Ability to interpret and/or write system documentation and technical specifications"
+								+"<br />"+
+								"&#10003 Strong ability to write intermediate level SQL coding to help analyze data"
+								+"<br />"+
+								"&#10003 Ability to understands and work with ETL jobs"
+								+"<br />"+
+								"&#10003 Proven history of successful problem solving with strong sense of ownership and urgency"
+								+"<br />"+
+								"&#10003 Problem-solving orientation. Offer several alternatives when asked to solve a problem"
+								;
+								document.getElementById("joba").innerHTML="<br>Knowledge and skills required:";
+								document.getElementById("jobaa").innerHTML =
+								"&#10003 Experience in business & technical requirements gathering process"
+								+"<br />"+
+								"&#10003 Experience in data profiling and analysis and design"
+								+"<br />"+
+								"&#10003 Ability to document, define interface specifications and reports specifications based on requirements"
+								+"<br />"+
+								"&#10003 Knowledge of BI tools (Power BI/SSRS, Oracle BI, OAS)"
+								+"<br />"+
+								"&#10003 ETL software used – Microsoft technologies, Oracle technologies"
+								+"<br />"+
+								"&#10003 Strong analytical skills"
+								+"<br />"+
+								"&#10003 Create requirements for developers, create test approaches, write and execute tests"
+								+"<br />"+
+								"&#10003 Experience with logical design would be an advantage"
+								+"<br />"+
+								"&#10003 Entry / Middle knowledge of reporting in banking will be an advantage"
+
+								;
+
+								document.getElementById("jobt").innerHTML="<br>Personal skills:";
+								document.getElementById("jobtt").innerHTML =
+								"&#10003 Result oriented"
+								+"<br />"+
+								"&#10003 Proven history of successful problem solving with strong sense of ownership and urgency"
+								+"<br />"+
+								"&#10003 Ability to offer more alternatives for solving problems"
+								+"<br />"+
+								"&#10003 Capacity to quickly assimilate new knowledge"
+								+"<br />"+
+								"&#10003 Concern for accuracy and quality"
+								+"<br />"+
+								"&#10003 Team work player"
+								;
+								document.getElementById("jobl").innerHTML="<br>Foreign languages:";
+								document.getElementById("jobll").innerHTML="&#10003 English language skills at intermediate-advanced level";
+								document.getElementById("jobb").innerHTML="<br>Benefits:";
+								document.getElementById("jobbb").innerHTML=
+								"&#10003 Properly salary conditions"
+								+"<br />"+
+								"&#10003 Indefinite period of employment contract"
+								+"<br />"+
+								"&#10003 Career plan"
+								+"<br />"+
+								"&#10003 Private medical insurance"
+								+"<br />"+
+								"&#10003 Official trainings and certifications"
+								+"<br />"+
+								"&#10003 Recognition of performance with a real opportunity for career growth"
+								+"<br />"+
+								"&#10003 Meal tickets"
+								+"<br />"+
+								"&#10003 Performance bonuses (based on company results)"
+								+"<br />"+
+								"&#10003 Professional and friendly working environment"+"<br /><br/>"
+								;
+								}
+							</script>
+						</section>
+
+					</section>
+				</div>
+			</section>
+
+			<section id="main" class="wrapper style3" style="margin: 0;"> <!--2 MAIN-white content zone -->
+				<div class="container">
+					<section id="features"> <!--Features -->
+
+						<header class="style1"> <!--Features header box-->
+							<h2 class="card-gray">Would you like to know us better?</h2>
+							<p class="style3">Contact and visit us! We will be glad to tell you about NBD!</p><br>
+						</header>
+
+						<div class="col-mg-auto form-center">
+							<form id="nbdform" method="post" action="" class="card-shadow card-gray">
+								<br>
+								<div class="form-group">
+									<h5 for="name">Name</h5>
+									<input
+									type="text"
+									class="form-control"
+									id="name"
+									minlength="3"
+									placeholder="Type your name here"
+									/>
+								</div>
+				
+								<br>
+								<div class="form-group">
+									<h5 for="email">Email</h5>
+									<input
+									type="email"
+									class="form-control"
+									id="email"
+									placeholder="Type your email here"
+									/>
+								</div>
+				
+								<br>
+								<div class="form-group">
+									<h5 for="message">Message</h5>
+									<textarea class="form-control" id="message" minlength="3" rows="3"  placeholder="Type your message here"></textarea>
+								</div>
+								<br><br>
+								<div class="g-recaptcha" data-callback="recaptcha_callback" data-sitekey="6LeAEtgiAAAAAIblF5YJ1BpolsVB3k0bkqrTwPBp"></div>
+								<br><br>
+								<button class="btn btn-info" id="submitbtn" type="submit" onclick="sendMail()" disabled>Send message</button>
+							</form>
+						</div>
+						
+					</section>
+				</div>
+			</section>
+
+			<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+			<script>// captcha
+				jQuery.validator.setDefaults({
+				debug: true,
+				success: "valid"
+				});
+				$( "#nbdform" ).validate({
+				rules: {
+					field: {
+					required: true,
+					email: true
+					}
+				}
+				});
+			</script>
+			<script>
+				function  recaptcha_callback(){
+
+				var subBtn=document.querySelector("#submitbtn")
+				subBtn.removeAttribute("disabled")
+				}
+			</script>
+			
+			<div id="btn-back-to-top"> <!--button up-->
+				<i class="fa-solid fa-chevron-up up-btn-logo"></i>
+			</div>
+
+			<section id="footer" class="wrapper footer-cont"> <!--FOOTER (1,2)-->
+				<div class="container">
+					<div class="row">
+
+						<div class="footer-h col-6 col-12-medium"> <!--LEFT FOOTER: title + logo-->
+							<div class="footer-left-cont">
+								<span>We scale up your business dimensions!</span>
+								<img src="images/logo-nbd-footer.png" />
+							</div>
+						</div>
+
+						<div class="footer-h col-6 col-12-medium"> <!-- RIGHT FOOTER: (2,2) contact elements -->
+							<section class="feature-list small"><br><br>
+								<div class="row">
+
+									<div class="col-6 col-12-small"> <!--ADRESA-->
+										<section>
+											<h3 class="icon solid fa-home">Adress</h3>
+											<p>
+												Romania, Bucharest<br/>
+												1 District<br/>
+												Scărlătescu Street<br/> 
+												No. 17-19, II - floor<br/>
+												Postal Code: 011158<br/>
+												CIF: RO27202001<br/>
+												J40/7003/2010
+											</p>
+										</section>
+									</div>
+
+									<div class="col-6 col-12-small"> <!--SOCIAL MEDIA-->
+										<section>
+											<h3 class="icon solid fa-comment">Social media</h3>
+											<div class="social-media-icon-cont">
+												<a href="https://www.facebook.com/newbusinessdimensions/" target="_blank">
+													<img src="/images/facebook.png" class="img-footer-logo"/>
+													<span>Facebook</span>
+												</a>
+												<a href="https://www.linkedin.com/company/new-business-dimensions" target="_blank">														
+													<img src="/images/linkedin.png" class="img-footer-logo"/>
+													<span>LinkedIn</span>
+												</a>
+												<a href="https://www.youtube.com/channel/UCKqiK43dVBTcxwaaOhQ_0yQ" target="_blank">
+													<img src="/images/youtube.png" class="img-footer-logo"/>
+													<span>YouTube</span>
+												</a>
+											</div>
+										</section>
+									</div>
+
+									<div class="col-6 col-12-small"> <!--MAIL-->
+										<section>
+											<h3 class="icon solid fa-envelope">Email</h3>
+											<div class="social-media-icon-cont">
+												<a href="mailto:office@nbd.ro"><span>office@nbd.ro</span></a>
+											</div>
+										</section>
+									</div>
+
+									<div class="col-6 col-12-small"> <!--PHONE-->
+										<section>
+											<h3 class="icon solid fa-phone">Phone</h3>
+											<div class="social-media-icon-cont">
+												<a href="tel:+40314260259"><span>+4 031 426 0259</span></a>
+											</div>
+										</section>
+									</div>
+
+								</div>
+							</section>
+						</div>
+					</div>
+
+					<div id="copyright"> <!--Copyright Footer zone-->
+						<ul>
+							<li>Copyright - 2023 &copy; <b>New Business Dimensions</b> - All rights reserverd - </li>
+							<li><a href="privacy-policy-en.html">Privacy policy</a></li>
+						</ul>
+					</div>
+
+				</div>
+			</section>
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>
